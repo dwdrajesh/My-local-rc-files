@@ -1,0 +1,116 @@
+alias lsvp="nice /repo/ezdawra/xcs-tools/svp/launch_svp --ethbase 50005 --uimage /repo/ezdawra/xcs-build/build/xenon-plf/bitbake_build/tmp/work-shared/xenon/kernel-source/arch/arm/boot/uImage --dtb /repo/ezdawra/xcs-build/build/xenon-plf/bitbake_build/tmp/work/xenon-wrs-linux-gnueabi/power-management-device-tree/1.0-r78/xenon-dev.dtb"
+alias lsvpd="nice sw/tools/svp/nova --port 50005"
+alias ffind='find . -iname $1'
+#alias #=Command="# Command to find lock file for the STP:
+alias youlab="echo 10.122.122.32; ssh 10.122.122.32"
+alias findstp='find /proj/terass_func/continuous_verification/locks -exec ls -l {} \; | grep -i $1'
+#alias #=Command="# Command to exclude/include file extension in grep
+#find=.="#find . -name "*.cc" | grep -ni "testhandler" * --exclude=*.{data,bak,cs.txt} --exclude=tags
+#alias #gitlist()={="#gitlist() { git diff-tree --no-commit-id --name-only -r "$1" ; }
+alias gitlist='git diff-tree --no-commit-id --name-only -r $1 ;'
+alias gitdiffc='git diff $1^ $1 ;' 
+alias cdgit='cd /repo/ezdawra/radiosw'
+alias elvis='/repo/ezdawra/radiosw/test/elvis; /proj/crbs/radiosw/jcat/radio_jcat_eclipse.sh'
+#=Self="# Self tests #################
+##################################=="##################################
+alias gitalias='git config --get-regexp alias'
+
+#alias gitlog="git log -$1 --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
+function gitlog ()
+{ 
+  #  echo "You entered: -$1"
+  git log -$1 --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short
+ }
+#gitlog() {
+#git log -"$1" --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short
+#}
+
+alias findps='ps aux | grep -i RadioSwSim | grep ezdawra | grep -v grep'
+alias gg='git log -5 --oneline  --all --graph'
+alias la='ls -a'
+alias gd='git difftool'
+alias gis='git status'
+alias gitfile="git show --name-only"
+alias gitdiffstash='git difftool stash'
+alias gitliststash='git stash show --name-only'
+alias p='pwd'
+alias upcs='chmod +x ~/updatecs.sh; ~/updatecs.sh'
+alias cds='cd /repo/`whoami`/radiosw/sw/app'
+alias cdsw='cd /repo/`whoami`/radiosw/sw/'
+alias cdsrc='cd /repo/`whoami`/radiosw/sw/app/commFW/selfTestFramework/'
+alias cdmake='cdsw;cd make'
+alias cdrwsim='cd /repo/`whoami`/radiosw/sw/bin/TargetRSim/Runtime/rus5x'
+alias cdelvis='cd /repo/`whoami`/radiosw/test/elvis'
+alias cdut='cd /repo/`whoami`/radiosw/test/unitTest'
+alias cdg='cd /repo/`whoami`/radiosw'
+alias cdr='cd /repo/`whoami`/'
+alias cdi='cd /repo/`whoami`/iq_pattern_files'
+alias cdx='cd /repo/`whoami`/xcs-build'
+alias cdks='cd /repo/ezdawra/xcs-build/build/xenon-plf/bitbake_build/tmp/work-shared/xenon/kernel-source'
+alias cdm='cd /repo/`whoami`/meta-kernel-power-management-predev'
+alias cdgw='cd /home/`whoami`/git_temp/radiosw'
+alias cdt='cd /repo/`whoami`/terass/msr/' 
+#alias=cdre="#alias cdre 'cd /repo/`whoami`/radiosw/sw/app/resource/selfTestResourceHandler/'
+alias gerrit='git push origin HEAD:refs/for/master'
+alias elvis='cd /repo/`whoami`/radiosw/test/elvis && /proj/crbs/radiosw/jcat/radio_jcat_eclipse_neon.sh'
+alias elvis1='Don"t use, this is old; cd /repo/`whoami`/radiosw/test/elvis && /proj/crbs/radiosw/jcat/radio_jcat_eclipse.sh'
+alias elvisnew='cd /repo/`whoami`/radiosw/test/elvis && /proj/crbs/radiosw/jcat/radio_jcat_eclipse_neon.sh'
+#alias=gitupdate="#alias gitupdate 'git stash && git pull --rebase && git submodule update --init --recursive'
+alias gitupdate='git stash save "(`date`) + last commit before stash: `git log --oneline -1`" && git pull --rebase && git submodule update --init --recursive'
+alias gitclean='cdgit && git clean -xffd'
+#alias=gitpush="#alias gitpush 'git push origin HEAD:refs/for/master-int-auriga'
+alias gitpush='git push origin HEAD:refs/for/master'
+alias 
+alias bonngr='qemake ngr2all'
+alias c='clear'
+alias l='ls -a'
+#=Official="# Official load location:
+alias cdload="cd /proj/eiffel003_artifacts/arm001/nexus_work_dir/storage/radio-arm001-eiffel003/com/ericsson/msr/radiosw/loads/"
+alias cd6488_official_load="cd /proj/crbs/radiosw/build/air6488-build-master/XLF_signed/"
+alias cdlog="cd /proj/terass_func/TerassResult/Elvis/ezdawra/logs/Fernseh_B"
+alias cdjcatlocallog="cd /proj/terass_func/JcatResult/ezdawra"
+alias cdkrc="cd /repo/ezdawra/radiosw/test/elvis/src/main/resources/Database/Radio/"
+alias nrload="echo '/proj/crbs/radiosw/iq_pattern_files/nr_fdd/10p1G/fullband/20bits/NR20M_FDD_64QAM.cdl3'"
+alias 6488load="echo '/repo/ezdawra/air6488-nr-build/build/air6488-standard_rootfs/bitbake_build/tmp/work/armv7a-vfp-neon-wrs-linux-gnueabi/xlf-dev-rnd-signed-air6488/1.0-r2/deploy-xlf-dev-rnd-signed-air6488/'"
+alias ltetddload=" echo /proj/eiffel003_artifacts/arm001/nexus_work_dir/storage/radio-arm001-eiffel003/com/ericsson/msr/radiosw/loads/xilinxAMS_88xx_app-CXP9013268_18/R79DJ/xilinxAMS_88xx_app-CXP9013268_18-R79DJ.xlf"
+#=NR_FDD="# NR_FDD 20 Mhz cdl file copied at: NR_FDD CDL File location:
+#=\\10.122.122.17\ltenas2\ezdawra\NR20M_FDD_64QAM.cdl3="# \\10.122.122.17\ltenas2\ezdawra\NR20M_FDD_64QAM.cdl3
+#=Citrix="# Citrix to login before logging into radio:
+alias ctrix="ssh -X 10.122.16.36"
+alias ctrix2="ssh -X 10.122.122.32"
+#=Terass="# Terass 
+alias terass="/repo/{$USER}/terass/msr/tools/terass"
+#=xplink="# xplink gateway
+#=10.122.144.156="# 10.122.144.156 does not let login, then ssh -x 10.122.144.156
+alias xpGW="/home/edougra/tools/bin/xplink.23b11 -X 10.122.144.152:2103:40002 -n NR_SSI_gateway -g 2205 -w -D"
+#=The="# The following xplink command (wiht -U eth0:40002) will work only from the lab servers
+#=(10.122.144.156="# (10.122.144.156 or sth). While running xplink from the team Citrix server, instead of eth0, "-X
+#=10.122.144.152="# 10.122.144.152 or .156) should be used.
+#alias=xpnr="#alias xpnr "/home/edougra/tools/bin/xplink.23b11 -U eth0:40002 -n ezdawra_xplink1 -p PAW_C2/RE_14_1_0"
+#alias=xpnr="#alias xpnr "/home/edougra/tools/bin/xplink.23b11 -X 10.122.144.152:2103:40002 -n ezdawra_xplinkN -p PAW_C2/RE_14_1_0"
+alias xpnr="/home/edougra/tools/bin/xplink.23b11 -X 10.122.144.152:2103:40002 -n ezdawra_xplinkN -p Maxwell/RE_1_1_0"
+alias xpnr49="/home/edougra/tools/bin/xplink.23b11 -X 10.122.95.60:2103:40002 -n ezdawra_xplinkN -p OSEruma5052/RE_0_1_0"
+#=server="# server to ssh before xplink to CT11/ruma
+alias server="ssh -x 10.122.144.156"
+alias server95="ssh -x 10.122.95.60"
+#=telnet="# telnet to the 4449 radio in lab E (OSEruma5052, from Cobalt team)
+alias telnet49="telnet 10.122.145.105 2122"
+alias ssh49="ssh -x root@10.122.144.60"
+alias ct11ip="10.122.145.55"
+#=sonar="# sonar
+#alias=sonar="#alias sonar "mvn sonar:sonar"
+#=The="# The above "mvn sonar:sonar" is outdated and doesn't show the result of the scan
+alias sonar="/repo/ezdawra/radiosw/test/elvis/tools/run_sonar.sh"
+#=Ivor="# Ivor script to copy Hilario's NR_FDD related DB changes
+alias db_script="cd /repo/nr_shared/scripts/"
+alias rungdb="/repo/ezdawra/radiosw/sw/bin/Target/ngr2.gdb"
+#=codestyle="# codestyle Elvis
+alias codestylejava="mvn java-formatter:format"
+#=SSV="# SSV bean file location
+alias cdbean="cd /proj/crbs/radiosw/radiosw_lab/test_position_data/beans/"
+#=iqDataFiles="# iqDataFiles info for Elvis vm argument:
+alias cdiq="cd /repo/ezdawra/radiosw/test/elvis/target/test-classes/iqDataInfoTestFiles"
+#=Elvis="# Elvis command to access coli client:
+alias coliclient="radioUnit.getColiClientConnection().sendRuShellCommand(\'carrierListHandler print\');"
+alias kistaradio="telnet to 10.68.95.20 7007, radio IP: 10.68.160.92"
+alias oran_team="esekilxxen4299.rnd.ki.sw.ericsson.se"

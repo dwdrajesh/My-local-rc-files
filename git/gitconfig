@@ -1,0 +1,18 @@
+
+
+# GIT setup in ~/.cshrc.user file
+git config --global user.name "Rajesh Dawadi"
+git config --global user.email "rajesh.dawadi@ericsson.com"
+#git config --global core.editor "vim"
+git config --global core.pager 'less -FRXS'
+git config --global color.ui true
+git config --global merge.tool vimdiff
+git config --global diff.tool vimdiff
+git config --global difftool.prompt false
+git config --global mergetool.prompt false
+
+git config --global alias.plog "log --pretty=format:'%Cred%h%Creset %s -%C(yellow)%d%Creset
+%Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global alias.lol "log --graph --decorate --pretty=oneline --abbrev-commit"
+git config --global alias.subupd "submodule update --recursive --init"
+
